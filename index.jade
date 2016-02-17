@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title R2-D2 Controller
+    body
+        h1 R2-D2 Controller
+        button#forward forward
+        button#backward backward
+        script.
+            var forwardButton = document.getElementById('forward');
+            var backwardButton = document.getElementById('backward');
+            
+            function post(req) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/');
+                xhr.send(req);
+            }
+            
+            forwardButton.addEventListener('mousedown', e => post('forward'));
+            forwardButton.addEventListener('mouseup', e => post('stop'));
+            backwardButton.addEventListener('mousedown', e => post('backward'));
+            backwardButton.addEventListener('mouseup', e => post('stop'));
