@@ -2,6 +2,7 @@
   "name": "r2d2",
   "version": "1.0.0",
   "description": "Controlling DC motor in a web browser using Raspberry Pi.",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
