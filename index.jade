@@ -14,7 +14,6 @@ html
                 margin: 20px auto;
                 font-size: 1em;
                 color: white;
-                background-color: #1F3A93;
                 border-radius: 10px;
                 -webkit-appearance: none;
                 user-select: none;
@@ -23,13 +22,25 @@ html
                 -ms-user-select: none;
                 -o-user-select: none;
             }
+            #motor button {
+                background-color: #1F3A93;
+            }
+            #led button {
+                background-color: #CF000F;
+            }
     body
         h1 R2-D2 Controller
-        button#forward forward
-        button#backward backward
+        div#motor
+            button#forward forward
+            button#backward backward
+        div#led
+            button#on LED on
+            button#off LED off
         script.
             var forwardButton = document.getElementById('forward');
             var backwardButton = document.getElementById('backward');
+            var ledOnButton = document.getElementById('on');
+            var ledOffButton = document.getElementById('off');
             
             function post(req) {
                 var xhr = new XMLHttpRequest();
@@ -41,3 +52,5 @@ html
             forwardButton.addEventListener('mouseup', e => post('stop'));
             backwardButton.addEventListener('mousedown', e => post('backward'));
             backwardButton.addEventListener('mouseup', e => post('stop'));
+            ledOnButton.addEventListener('mousedown', e => post('on'));
+            ledOffButton.addEventListener('mousedown', e => post('off'));
