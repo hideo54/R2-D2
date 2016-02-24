@@ -1,5 +1,6 @@
 var http = require('http'),
-    jade = require('jade');
+    jade = require('jade'),
+    exec = require('child_process').exec;
 
 http.createServer(function (req, res) {
     if (req.method == 'GET') {
@@ -14,8 +15,7 @@ http.createServer(function (req, res) {
             body += data;
         });
         req.on('end', function () {
-            // Do something:
-            console.log(body);
+            exec('python motor.py ' + body, function(){});
             res.end();
         });
     }
