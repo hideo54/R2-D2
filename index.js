@@ -15,7 +15,7 @@ http.createServer(function (req, res) {
             body += data;
         });
         req.on('end', function () {
-            exec('python motor.py ' + body, function(){});
+            exec('python rpi.py ' + body, function(){});
             res.end();
         });
     }
