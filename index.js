@@ -16,6 +16,7 @@ http.createServer(function (req, res) {
         req.on('end', function () {
             // Do something:
             console.log(body);
+            res.end();
         });
     }
 }).listen(3000, 'localhost');
