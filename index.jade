@@ -66,7 +66,7 @@ html
             backwardButton.addEventListener('mouseup', e => post('stop'));
             ledOnButton.addEventListener('mousedown', e => post('on'));
             ledOffButton.addEventListener('mousedown', e => post('off'));
-            terminatorSoundButton.addEventListener('mousedown', e => post('off'));
-            starwarsSoundButton.addEventListener('mousedown', e => post('off'));
-            gochiusaSoundButton.addEventListener('mousedown', e => post('off'));
-            stopSoundButton.addEventListener('mousedown', e => post('off'));
+            terminatorSoundButton.addEventListener('mousedown', e => post('terminator'));
+            starwarsSoundButton.addEventListener('mousedown', e => post('starwars'));
+            gochiusaSoundButton.addEventListener('mousedown', e => post('gochiusa'));
+            stopSoundButton.addEventListener('mousedown', e => post('quiet'));
