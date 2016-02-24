@@ -14,17 +14,17 @@ def control(arg):
         GPIO.setup(input1b, GPIO.OUT)
 
     elif arg == 'forward':
-        GPIO.output(enable1, true)
-        GPIO.output(input1a, true)
-        GPIO.output(input1b, false)
+        GPIO.output(enable1, True)
+        GPIO.output(input1a, True)
+        GPIO.output(input1b, False)
 
     elif arg == 'backward':
-        GPIO.output(enable1, true)
-        GPIO.output(input1a, false)
-        GPIO.output(input1b, true)
+        GPIO.output(enable1, True)
+        GPIO.output(input1a, False)
+        GPIO.output(input1b, True)
 
     elif arg == 'stop':
-        GPIO.output(enable1, false)
+        GPIO.output(enable1, False)
 
     elif arg == 'quit':
         GPIO.cleanup()
