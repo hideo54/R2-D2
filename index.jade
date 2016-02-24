@@ -28,6 +28,9 @@ html
             #led button {
                 background-color: #CF000F;
             }
+            #sound button {
+                background-color: #6C7A89;
+            }
     body
         h1 R2-D2 Controller
         div#motor
@@ -36,11 +39,20 @@ html
         div#led
             button#on LED on
             button#off LED off
+        div#sound
+            button#terminator TERMINATOR
+            button#starwars STAR WARS
+            button#gochiusa Daydream Café
+            button#quiet Stop sound
         script.
             var forwardButton = document.getElementById('forward');
             var backwardButton = document.getElementById('backward');
             var ledOnButton = document.getElementById('on');
             var ledOffButton = document.getElementById('off');
+            var terminatorSoundButton = document.getElementById('terminator');
+            var starwarsSoundButton = document.getElementById('starwars');
+            var gochiusaSoundButton = document.getElementById('gochiusa');
+            var stopSoundButton = document.getElementById('quiet');
             
             function post(req) {
                 var xhr = new XMLHttpRequest();
@@ -54,3 +66,7 @@ html
             backwardButton.addEventListener('mouseup', e => post('stop'));
             ledOnButton.addEventListener('mousedown', e => post('on'));
             ledOffButton.addEventListener('mousedown', e => post('off'));
+            terminatorSoundButton.addEventListener('mousedown', e => post('off'));
+            starwarsSoundButton.addEventListener('mousedown', e => post('off'));
+            gochiusaSoundButton.addEventListener('mousedown', e => post('off'));
+            stopSoundButton.addEventListener('mousedown', e => post('off'));

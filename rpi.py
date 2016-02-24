@@ -1,5 +1,6 @@
 import sys
 import RPi.GPIO as GPIO
+import subprocess
 
 # Register Pin number
 enable1 = 22
@@ -33,6 +34,18 @@ def control(arg):
 
     elif arg == 'off':
         GPIO.output(led, False)
+
+    elif arg == 'terminator':
+        subprocess.call('play ../terminator.mp3')
+
+    elif arg == 'starwars':
+        subprocess.call('play ../starwars.mp3')
+
+    elif arg == 'gochiusa':
+        subprocess.call('play ../gochiusa.mp3')
+
+    elif arg == 'quiet':
+        subprocess.call('play null')
 
     elif arg == 'quit':
         GPIO.cleanup()
