@@ -36,16 +36,16 @@ def control(arg):
         GPIO.output(led, False)
 
     elif arg == 'terminator':
-        subprocess.call('play ../terminator.mp3')
+        subprocess.call('play ../terminator.mp3 gain 20'.split())
 
     elif arg == 'starwars':
-        subprocess.call('play ../starwars.mp3')
+        subprocess.call('play ../starwars.mp3'.split())
 
     elif arg == 'gochiusa':
-        subprocess.call('play ../gochiusa.mp3')
+        subprocess.call('play ../gochiusa.mp3'.split())
 
     elif arg == 'quiet':
-        subprocess.call('play null')
+        subprocess.call('play null'.split())
 
     elif arg == 'quit':
         GPIO.cleanup()
