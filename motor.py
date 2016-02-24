@@ -33,4 +33,5 @@ def control(arg):
         print 'No such command: ' + arg
 
 if __name__ == '__main__':
+    control('init')
     control(sys.argv[1])
